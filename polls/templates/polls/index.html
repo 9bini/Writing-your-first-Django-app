@@ -1,3 +1,13 @@
+{# 템플릿 태그는 정적 파일의 절대경로 URL을 생성 #}
+
+{% load static %}
+
+{#    장고에서 생성되지 않는 정적 파일에는 사용할수 가없다. #}
+{#    정직 파일의 경로 묶음을 수정하지 않고도 정적 템프릿 #}
+{# 태그에서 해당 URL을 생성할 수 있으므로 항상 상대 경로를 사용하여 정적파일을 서로 연결합니다. #}
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
